@@ -24,5 +24,11 @@ BaselineOfKIExtensionsForGt class >> loadLepiter [
 BaselineOfKIExtensionsForGt >> baseline: spec [
 	<baseline>
 	spec for: #common do: [
-		spec package: 'KIExtensionsForGt' ]
+		spec
+			baseline: 'GToolkit4P3'
+			with: [ spec repository: 'github://feenkcom/gt4p3' ].
+		spec package: 'KIExtensionsForGt'.
+		spec
+			package: 'KIExtensionsForGToolkit4P3'
+			with: [ spec requires: #('GToolkit4P3') ] ]
 ]
